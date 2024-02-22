@@ -196,7 +196,9 @@ public struct ASCollectionView<SectionID: Hashable>: UIViewControllerRepresentab
 			assignIfChanged(collectionView, \.allowsMultipleSelection, newValue: true)
 			assignIfChanged(collectionView, \.showsVerticalScrollIndicator, newValue: parent.verticalScrollIndicatorEnabled)
 			assignIfChanged(collectionView, \.showsHorizontalScrollIndicator, newValue: parent.horizontalScrollIndicatorEnabled)
+#if !os(visionOS)
 			assignIfChanged(collectionView, \.keyboardDismissMode, newValue: .interactive)
+#endif
 			updateCollectionViewContentInsets(collectionView)
 		}
 

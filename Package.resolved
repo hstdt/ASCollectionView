@@ -1,16 +1,15 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "DifferenceKit",
-        "repositoryURL": "https://github.com/ra1028/DifferenceKit",
-        "state": {
-          "branch": null,
-          "revision": "14c66681e12a38b81045f44c6c29724a0d4b0e72",
-          "version": "1.1.5"
-        }
+  "originHash" : "b6034727dd3c36520f1a857354cb478b496a54e3a99ee4668adff5de83b037fd",
+  "pins" : [
+    {
+      "identity" : "differencekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hstdt/DifferenceKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "33257bffc937dde35f3ae05ebc5643d34d8a60f4"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 3
 }

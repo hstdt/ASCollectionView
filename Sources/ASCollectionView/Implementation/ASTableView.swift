@@ -155,8 +155,9 @@ public struct ASTableView<SectionID: Hashable>: UIViewControllerRepresentable, C
 			assignIfChanged(tableView, \.alwaysBounceVertical, newValue: parent.alwaysBounce)
 			assignIfChanged(tableView, \.showsVerticalScrollIndicator, newValue: parent.scrollIndicatorEnabled)
 			assignIfChanged(tableView, \.showsHorizontalScrollIndicator, newValue: parent.scrollIndicatorEnabled)
+#if !os(visionOS)
 			assignIfChanged(tableView, \.keyboardDismissMode, newValue: .interactive)
-
+#endif
 			updateTableViewContentInsets(tableView)
 
 			assignIfChanged(tableView, \.allowsSelection, newValue: true)
