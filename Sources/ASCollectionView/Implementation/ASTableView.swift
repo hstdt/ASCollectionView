@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Combine
@@ -924,3 +925,5 @@ public enum ASTableViewScrollPosition
 	case bottom
 	case indexPath(_: IndexPath)
 }
+
+#endif

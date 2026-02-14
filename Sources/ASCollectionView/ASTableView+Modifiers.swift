@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -146,3 +147,5 @@ public extension ASTableView
 		SelfSizingWrapper(content: self, shrinkDirection: .vertical, isEnabled: isEnabled, expandToFitMode: true)
 	}
 }
+
+#endif

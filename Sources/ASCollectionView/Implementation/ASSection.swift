@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -86,3 +87,5 @@ internal extension ASCollectionViewSection
 		dataSource.supplementaryViews[kind]
 	}
 }
+
+#endif

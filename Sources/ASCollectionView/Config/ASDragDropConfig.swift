@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -41,3 +42,5 @@ public struct ASDragDropConfig<Data>
 		// Used to provide `disabled` mode
 	}
 }
+
+#endif

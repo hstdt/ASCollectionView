@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -129,3 +130,5 @@ extension ASCollectionViewDelegate
 		coordinator?.collectionView(collectionView, contextMenuConfigurationForItemAt: indexPath, point: point)
 	}
 }
+
+#endif

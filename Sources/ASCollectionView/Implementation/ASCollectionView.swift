@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Combine
@@ -1101,3 +1102,5 @@ public enum ASCollectionViewScrollPosition
 	case right
 	case indexPath(_: IndexPath, positionOnScreen: UICollectionView.ScrollPosition = .centeredVertically, extraOffset: CGPoint = .zero)
 }
+
+#endif

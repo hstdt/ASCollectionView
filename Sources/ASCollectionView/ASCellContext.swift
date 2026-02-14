@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -12,3 +13,5 @@ public struct ASCellContext
 	public var isFirstInSection: Bool
 	public var isLastInSection: Bool
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -74,3 +75,5 @@ struct ASIndexedDictionary<Key: Hashable, Value>: BidirectionalCollection
 		}
 	}
 }
+
+#endif

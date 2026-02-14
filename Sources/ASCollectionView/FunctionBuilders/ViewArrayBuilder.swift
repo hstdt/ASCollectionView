@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -70,3 +71,5 @@ public struct ViewArrayBuilder
 		.group(items)
 	}
 }
+
+#endif

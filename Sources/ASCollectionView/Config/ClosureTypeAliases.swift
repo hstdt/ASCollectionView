@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -33,3 +34,5 @@ public typealias ContextMenuProvider<Data> = ((_ index: Int, _ item: Data) -> UI
 
 @available(iOS 13.0, *)
 public typealias SelfSizingConfig = ((_ context: ASSelfSizingContext) -> ASSelfSizingConfig?)
+
+#endif

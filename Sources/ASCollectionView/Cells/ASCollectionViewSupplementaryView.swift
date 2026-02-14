@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -101,3 +102,5 @@ class ASCollectionViewSupplementaryView: UICollectionReusableView, ASDataSourceC
 			height: selfSizingConfig.canExceedCollectionHeight ? nil : collectionViewController.map { $0.collectionView.contentSize.height - 0.001 })
 	}
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import CoreGraphics
@@ -51,3 +52,5 @@ extension CGSize
 			height: height.applyOptionalMaxBound(maxSize.height))
 	}
 }
+
+#endif

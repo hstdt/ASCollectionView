@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import DifferenceKit
@@ -134,3 +135,5 @@ extension ASDiffableDataSourceSnapshot.Section: DifferentiableSection
 
 @available(iOS 13.0, *)
 extension ASCollectionViewItemUniqueID: Differentiable {}
+
+#endif

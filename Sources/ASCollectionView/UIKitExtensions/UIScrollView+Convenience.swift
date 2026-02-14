@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import UIKit
@@ -18,3 +19,5 @@ extension UIScrollView
             y: max(-adjustedContentInset.top, contentSizePlusInsets.height - bounds.height))
 	}
 }
+
+#endif

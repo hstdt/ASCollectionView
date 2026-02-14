@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -329,3 +330,5 @@ extension Array where Element: Comparable
 		// swiftformat:enable redundantSelf
 	}
 }
+
+#endif

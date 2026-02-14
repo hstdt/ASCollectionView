@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(name: "ASCollectionView",
-                      platforms: [.iOS(.v12)],
+                      platforms: [.iOS(.v12), .macOS(.v13)],
                       products: [// Products define the executables and libraries produced by a package, and make them visible to other packages.
                         .library(name: "ASCollectionView",
                                  targets: ["ASCollectionView", "SwiftUILayouts"]),

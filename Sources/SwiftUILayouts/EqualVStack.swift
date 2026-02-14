@@ -74,7 +74,7 @@ import SwiftUI
 ///   gain much efficiency from using a cache. You can profile your app
 ///   with Instruments to find out whether a particular layout type actually
 ///   benefits from a cache.
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 public struct EqualVStack: Layout {
     public init(spacing: Double? = nil) {
         self.spacing = spacing

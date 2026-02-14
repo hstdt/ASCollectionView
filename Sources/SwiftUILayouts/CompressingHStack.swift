@@ -7,7 +7,7 @@ A custom horizontal stack that offers all its subviews the width of its largest 
 
 import SwiftUI
 
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 public struct CompressingHStack: Layout {
     public init(spacing: Double? = nil) {
         self.spacing = spacing

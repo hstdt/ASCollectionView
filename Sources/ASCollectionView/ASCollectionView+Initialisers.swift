@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -88,3 +89,5 @@ public extension ASCollectionView where SectionID == Int
 		self.init(editMode: editMode, data: data, dataID: \.id, contentBuilder: contentBuilder)
 	}
 }
+
+#endif

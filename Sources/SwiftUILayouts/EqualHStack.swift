@@ -56,7 +56,7 @@ import SwiftUI
 /// The method creates a single size proposal for the subviews, and then uses
 /// that, along with a point that changes for each subview, to arrange the
 /// subviews in a horizontal line with default spacing.
-@available(iOS 16.0, *)
+@available(iOS 16.0, macOS 13.0, *)
 public struct EqualHStack: Layout {
     public init(spacing: Double? = nil, fillAvailable: Bool = false) {
         self.spacing = spacing

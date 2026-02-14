@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -9,3 +10,5 @@ func assignIfChanged<Object: AnyObject, T: Equatable>(_ object: Object, _ keyPat
 	object[keyPath: keyPath] = newValue
 	return true
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import UIKit
@@ -232,3 +233,5 @@ public extension ASCollectionView
 		SelfSizingWrapper(content: self, shrinkDirection: dimension, isEnabled: isEnabled, expandToFitMode: true)
 	}
 }
+
+#endif

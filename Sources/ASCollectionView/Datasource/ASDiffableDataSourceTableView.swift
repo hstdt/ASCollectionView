@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import DifferenceKit
@@ -160,3 +161,5 @@ class ASDiffableDataSourceTableView<SectionID: Hashable>: ASDiffableDataSource<S
 		return index
 	}
 }
+
+#endif

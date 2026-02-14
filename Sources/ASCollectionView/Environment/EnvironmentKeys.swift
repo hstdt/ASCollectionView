@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import Foundation
@@ -44,3 +45,5 @@ public extension EnvironmentValues
 		set { self[EnvironmentKeyCollectionViewScrollToCell.self] = newValue }
 	}
 }
+
+#endif

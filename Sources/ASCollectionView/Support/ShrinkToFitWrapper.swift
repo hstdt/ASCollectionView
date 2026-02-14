@@ -1,3 +1,4 @@
+#if os(iOS)
 // ASCollectionView. Created by Apptek Studios 2019
 
 import SwiftUI
@@ -79,3 +80,5 @@ class ContentSizeTracker: ObservableObject
 	@Published
 	var contentSize: CGSize?
 }
+
+#endif
