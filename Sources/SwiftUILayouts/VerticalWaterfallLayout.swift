@@ -24,12 +24,15 @@ public struct VerticalWaterfallLayout: Layout {
         var targetContainerWidth: Double
         // If this changes invalidate the cache
         var columnCount: Int
+        // If this changes invalidate the cache
+        var itemCount: Int
         var items: [Int: CacheItem] = [:]
         var size: CGSize = .zero
         
-        func ifValidForParams(_ width: Double, columns: Int) -> Self? {
+        func ifValidForParams(_ width: Double, columns: Int, itemCount: Int) -> Self? {
             guard targetContainerWidth == width,
-                    columnCount == columns
+                    columnCount == columns,
+                    self.itemCount == itemCount
             else { return nil }
             return self
         }
@@ -56,7 +59,8 @@ public struct VerticalWaterfallLayout: Layout {
     }
     
     public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout LayoutCache?) {
-        let calc = cache?.ifValidForParams(proposal.replacingUnspecifiedDimensions().width, columns: columns) ?? layout(subviews: subviews, containerWidth: bounds.width)
+        let calc = cache?.ifValidForParams(bounds.width, columns: columns, itemCount: subviews.count) ?? layout(subviews: subviews, containerWidth: bounds.width)
+        cache = calc
         for (index, subview) in zip(subviews.indices, subviews) {
             if let value = calc.items[index] {
                 subview.place(at: bounds.origin + value.position,
@@ -66,8 +70,8 @@ public struct VerticalWaterfallLayout: Layout {
     }
     
     func layout(subviews: Subviews, containerWidth: CGFloat) -> LayoutCache {
-        guard containerWidth != 0 else  {return LayoutCache(targetContainerWidth: 0, columnCount: columns)}
-        var result: LayoutCache = .init(targetContainerWidth: containerWidth, columnCount: columns)
+        guard containerWidth != 0 else  {return LayoutCache(targetContainerWidth: 0, columnCount: columns, itemCount: subviews.count)}
+        var result: LayoutCache = .init(targetContainerWidth: containerWidth, columnCount: columns, itemCount: subviews.count)
         let columnWidth = (containerWidth - Double(columns - 1) * spacingX) / Double(columns)
         var columns: [Column] = .init(repeating: Column(width: columnWidth), count: columns)
         for (index, subview) in zip(subviews.indices, subviews) {
@@ -78,12 +82,12 @@ public struct VerticalWaterfallLayout: Layout {
                 set { columns[smallestColumnIndex] = newValue }
             }
             let x = (columnWidth + spacingX) * Double(smallestColumnIndex)
-            let y = currentColumn.height + spacingY
+            let y = currentColumn.height
             let item = CacheItem(position: CGPoint(x: x, y: y), size: size)
             currentColumn.items[index] = item
-            currentColumn.height = currentColumn.height + spacingY + item.size.height
+            currentColumn.height = currentColumn.height + item.size.height + spacingY
         }
-        let maxHeight = columns.max(by: { $0.height < $1.height })?.height ?? .zero
+        let maxHeight = max((columns.max(by: { $0.height < $1.height })?.height ?? .zero) - spacingY, .zero)
         result.size = CGSize(width: containerWidth, height: maxHeight)
         result.items = columns.reduce(into: [Int: CacheItem](), { partialResult, line in
             partialResult.merge(line.items, uniquingKeysWith: {$1})
